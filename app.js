@@ -240,16 +240,6 @@ const I={
         "Un moment au bord du lac",
         "Promenade, jogging ou pique-nique sur les espaces verts : profitez du lac à votre rythme.",
         "Voir le lac ↗"
-      ],
-      [
-        "Sushi Way",
-        "Une adresse de votre hôte pour une pause japonaise à Créteil Soleil.",
-        "Site & horaires ↗"
-      ],
-      [
-        "Le Paradis du Fruit",
-        "Une autre idée à Créteil Soleil pour déjeuner ou prendre une pause gourmande.",
-        "Site & carte ↗"
       ]
     ],
     "metroTitle": "Paris commence à Créteil–Préfecture.",
@@ -516,16 +506,6 @@ const I={
         "A moment by the lake",
         "A walk, a jog or a picnic on the green spaces: enjoy the lake at your own pace.",
         "View the lake ↗"
-      ],
-      [
-        "Sushi Way",
-        "Your host’s recommendation for a Japanese meal at Créteil Soleil.",
-        "Website & hours ↗"
-      ],
-      [
-        "Le Paradis du Fruit",
-        "Another idea at Créteil Soleil for lunch or a tasty break.",
-        "Website & menu ↗"
       ]
     ],
     "metroTitle": "Paris starts at Créteil–Préfecture.",
@@ -792,16 +772,6 @@ const I={
         "Un momento junto al lago",
         "Paseo, carrera o pícnic en las zonas verdes: disfruta del lago a tu ritmo.",
         "Ver el lago ↗"
-      ],
-      [
-        "Sushi Way",
-        "Una recomendación de tu anfitriona para comer japonés en Créteil Soleil.",
-        "Sitio y horarios ↗"
-      ],
-      [
-        "Le Paradis du Fruit",
-        "Otra idea en Créteil Soleil para almorzar o hacer una pausa.",
-        "Sitio y carta ↗"
       ]
     ],
     "metroTitle": "París empieza en Créteil–Préfecture.",
@@ -1068,16 +1038,6 @@ const I={
         "لحظة بجانب البحيرة",
         "نزهة أو ركض أو وجبة في المساحات الخضراء: استمتعوا بالبحيرة على مهل.",
         "عرض البحيرة ↗"
-      ],
-      [
-        "سوشي واي",
-        "اقتراح مضيفتكم لوجبة يابانية في كريتاي سولاي.",
-        "الموقع وأوقات العمل ↗"
-      ],
-      [
-        "لو بارادي دو فروي",
-        "فكرة أخرى في كريتاي سولاي للغداء أو استراحة شهية.",
-        "الموقع والقائمة ↗"
       ]
     ],
     "metroTitle": "تبدأ رحلتكم إلى باريس من كريتاي بريفيكتور.",
@@ -1125,8 +1085,8 @@ function creditHTML(p){const t=I[lang],c=photoCredits[p.id];if(!c)return '';retu
 function copyLinksHTML(p){const t=I[lang],links=[[t.walk,route(p.routeDestination||p.destination,'walking')],[t.transit,route(p.routeDestination||p.destination,'transit')],[t.car,route(p.routeDestination||p.destination,'driving')],[t.official,p.website]];if(p.booking)links.push([t.booking,p.booking]);return `<details class="copy-links"><summary>${t.copyLinks}</summary><p>${t.fallbackHelp}</p>${links.map(([label,url],i)=>`<div class="copy-link-row"><label for="copy-url-${i}">${label}</label><div><input id="copy-url-${i}" readonly value="${esc(url)}" dir="ltr"><button type="button" data-copy-link="copy-url-${i}">${t.copy}</button></div></div>`).join('')}<p class="copy-status" role="status" aria-live="polite"></p></details>`}
 document.addEventListener('click',async e=>{const b=e.target.closest('[data-copy-link]');if(!b)return;const input=document.getElementById(b.dataset.copyLink),status=b.closest('.copy-links').querySelector('.copy-status');try{if(!navigator.clipboard)throw Error('clipboard unavailable');await navigator.clipboard.writeText(input.value);status.textContent=I[lang].copied}catch{input.focus();input.select();input.setSelectionRange(0,input.value.length);status.textContent=I[lang].selected}});
 function showPlace(id){const p=places.find(p=>p.id===id),i=places.indexOf(p),t=I[lang],v=t.places[i];activePlace=id;$('#placeContent').innerHTML=`<img class="dialog-image" src="assets/${p.image}" alt="${esc(v[0])}"><h3>${v[0]}</h3><p class="dialog-desc">${v[1]}</p><p class="dialog-address">${esc(p.destination)}</p><p class="eyebrow">${t.routeTitle}</p><p class="route-help">${t.routeHelp}</p><p class="small muted">${t.newTab}</p><div class="route-buttons"><a href="${esc(route(p.routeDestination||p.destination,'walking'))}" target="_blank" rel="noopener noreferrer">${t.walk}</a><a href="${esc(route(p.routeDestination||p.destination,'transit'))}" target="_blank" rel="noopener noreferrer">${t.transit}</a><a href="${esc(route(p.routeDestination||p.destination,'driving'))}" target="_blank" rel="noopener noreferrer">${t.car}</a></div><p class="small muted">12 rue Roland Oudot, Créteil</p><p class="tip">${v[2]}</p><a class="official" href="${p.website}" target="_blank" rel="noopener noreferrer">${t.official}</a>${p.booking?`<a class="official booking-link" href="${esc(p.booking)}" target="_blank" rel="noopener noreferrer">${t.booking}</a>`:''}${p.map?`<a class="official map-link" href="${esc(p.map)}" target="_blank" rel="noopener noreferrer">${t.map}</a>`:''}${copyLinksHTML(p)}${creditHTML(p)}`;if(!$('#placeDialog').open)$('#placeDialog').showModal();$('#placeDialog').scrollTop=0}
-const localSites=['https://creteil.iledeloisirs.fr/','https://creteil-soleil.klepierre.fr/boutiques-restaurants/sushi-way','https://www.leparadisdufruit.fr/nos-restaurants/le-paradis-du-fruit-creteil'];const parisExtras=[{destination:'Cathédrale Notre-Dame de Paris, 6 Parvis Notre-Dame, 75004 Paris',website:'https://www.notredamedeparis.fr/visiter/reserver-gratuitement/'},{destination:'Avenue des Champs-Élysées, Paris'},{destination:'Disneyland Paris, 77700 Chessy',website:'https://tickets.disneylandparis.com/fr-fr/tickets'}];
-function renderGuide(){const t=I[lang];$('#localCards').innerHTML=t.localCards.map((r,i)=>`<article class="local-card"><h3>${r[0]}</h3><p>${r[1]}</p><a href="${localSites[i]}" target="_blank" rel="noopener noreferrer">${r[2]}</a>${i?`<a href="${esc(route(i===1?'Sushi Way Créteil Soleil, 101 avenue du Général de Gaulle, Créteil':'Le Paradis du Fruit Créteil Soleil, 101 avenue du Général de Gaulle, Créteil','walking'))}" target="_blank" rel="noopener noreferrer">${t.walk}</a>`:''}</article>`).join('');$('#extraParis').innerHTML=parisExtras.map((p,i)=>`<article class="paris-extra"><h3>${t.extraParis[i]}</h3><a href="${esc(route(p.destination,'transit'))}" target="_blank" rel="noopener noreferrer">${t.transit}</a>${p.website?`<a href="${p.website}" target="_blank" rel="noopener noreferrer">${i===2?t.booking:t.official}</a>`:''}</article>`).join('');$('#emergencyList').innerHTML=['112','15','17','18','115'].map((n,i)=>`<a href="tel:${n}"><span>${t.emergencyNames[i]}</span><b>${n} ↗</b></a>`).join('')}
+const localSites=['https://creteil.iledeloisirs.fr/'];const parisExtras=[{destination:'Cathédrale Notre-Dame de Paris, 6 Parvis Notre-Dame, 75004 Paris',website:'https://www.notredamedeparis.fr/visiter/reserver-gratuitement/'},{destination:'Avenue des Champs-Élysées, Paris'},{destination:'Disneyland Paris, 77700 Chessy',website:'https://tickets.disneylandparis.com/fr-fr/tickets'}];
+function renderGuide(){const t=I[lang];$('#localCards').innerHTML=t.localCards.map((r,i)=>`<article class="local-card"><h3>${r[0]}</h3><p>${r[1]}</p><a href="${localSites[i]}" target="_blank" rel="noopener noreferrer">${r[2]}</a></article>`).join('');$('#extraParis').innerHTML=parisExtras.map((p,i)=>`<article class="paris-extra"><h3>${t.extraParis[i]}</h3><a href="${esc(route(p.destination,'transit'))}" target="_blank" rel="noopener noreferrer">${t.transit}</a>${p.website?`<a href="${p.website}" target="_blank" rel="noopener noreferrer">${i===2?t.booking:t.official}</a>`:''}</article>`).join('');$('#emergencyList').innerHTML=['112','15','17','18','115'].map((n,i)=>`<a href="tel:${n}"><span>${t.emergencyNames[i]}</span><b>${n} ↗</b></a>`).join('')}
 function render(){const t=I[lang];document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';$('#language').value=lang;document.querySelectorAll('[data-t]').forEach(el=>el.textContent=t[el.dataset.t]);document.querySelectorAll('[data-alt]').forEach(el=>el.alt=t[el.dataset.alt]);renderSteps();renderPlaces();renderGuide();$('#routeGuide').innerHTML=t.routeGuide.map((r,i)=>`<div><span class="guide-number">${i+1}</span><h3>${r[0]}</h3><p>${r[1]}</p></div>`).join('');$('#checkoutList').innerHTML=t.checkout.map((r,i)=>`<label class="checkout-item"><input type="checkbox" data-checkout="${i}" ${checkedCheckout.has(i)?'checked':''}><span><strong>${r[0]}</strong><small>${r[1]}</small></span></label>`).join('');document.querySelectorAll('[data-checkout]').forEach(b=>b.onchange=()=>b.checked?checkedCheckout.add(Number(b.dataset.checkout)):checkedCheckout.delete(Number(b.dataset.checkout)));$('#rulesList').innerHTML=t.rules.map(r=>`<div class="rule"><h3>${r[0]}</h3><p>${r[1]}</p></div>`).join('');document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b.dataset.filter===filter);b.setAttribute('aria-pressed',b.dataset.filter===filter)});if($('#placeDialog').open&&activePlace)showPlace(activePlace)}
 $('#copyWifi').onclick=async()=>{const input=$('#wifiPassword');try{if(!navigator.clipboard)throw Error('unavailable');await navigator.clipboard.writeText(input.value);$('#wifiStatus').textContent=I[lang].copied}catch{input.type='text';input.focus();input.select();input.setSelectionRange(0,input.value.length);$('#wifiStatus').textContent=I[lang].selected}};
 $('#language').onchange=e=>{lang=e.target.value;try{localStorage.setItem('escale-language',lang)}catch{}render()};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});$('#closePlace').onclick=()=>$('#placeDialog').close();$('#closePhoto').onclick=()=>$('#photoDialog').close();document.querySelectorAll('dialog').forEach(d=>d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));render();fetch('assets/photo-credits.json').then(r=>r.json()).then(c=>{photoCredits=c;if($('#placeDialog').open&&activePlace)showPlace(activePlace)}).catch(()=>{});
