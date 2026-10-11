@@ -1,0 +1,58 @@
+{
+  "lac": {
+    "author": "Chabe01",
+    "source": "https://commons.wikimedia.org/wiki/File:Lac_Cr%C3%A9teil_-_Cr%C3%A9teil_(FR94)_-_2021-04-01_-_1.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "lac-real.jpg",
+    "title": "File:Lac Créteil - Créteil (FR94) - 2021-04-01 - 1.jpg",
+    "description": "Lac de Créteil, Créteil."
+  },
+  "vagues": {
+    "author": "© Île de loisirs de Créteil",
+    "source": "https://creteil.iledeloisirs.fr/piscine-vagues-ile-loisirs-creteil",
+    "license": "",
+    "licenseUrl": ""
+  },
+  "aqua": {
+    "author": "Mariiwakura",
+    "source": "https://commons.wikimedia.org/wiki/File:Aquaboulevard_int01.JPG",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "file": "aqua-real.jpg",
+    "title": "File:Aquaboulevard int01.JPG",
+    "description": "inside the Aquaboulevard, Paris"
+  },
+  "louvre": {
+    "author": "Benh LIEU SONG",
+    "source": "https://commons.wikimedia.org/wiki/File:Cour_Napol%C3%A9on_at_night_-_Louvre.jpg",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "file": "louvre-real.jpg",
+    "title": "File:Cour Napoléon at night - Louvre.jpg",
+    "description": "Courtyard of the Museum of Louvre, and its pyramid. This picture is a panorama made from stitching three pictures with Hugin."
+  },
+  "montmartre": {
+    "author": "Terragio67",
+    "source": "https://commons.wikimedia.org/wiki/File:Basilique_du_Sacr%C3%A9-C%C5%93ur_de_Montmartre_-_Paris_-_GT-01_-_2024.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "file": "montmartre-real.jpg",
+    "title": "File:Basilique du Sacré-Cœur de Montmartre - Paris - GT-01 - 2024.jpg",
+    "description": "Basilica of the Sacred Heart of Montmatre, seen from Square Louise Michel, Paris."
+  },
+  "eiffel": {
+    "author": "Benh LIEU SONG",
+    "source": "https://commons.wikimedia.org/wiki/File:Tour_Eiffel_Wikimedia_Commons.jpg",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "file": "eiffel-real.jpg",
+    "title": "File:Tour Eiffel Wikimedia Commons.jpg"
+  },
+  "accro": {
+    "author": "© Ecopark Adventures · Créteil Pompadour",
+    "source": "https://ecopark-adventures.com/parc/creteil-val-de-marne-94/",
+    "license": "",
+    "licenseUrl": ""
+  }
+}
